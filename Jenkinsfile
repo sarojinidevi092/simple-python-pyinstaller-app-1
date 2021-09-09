@@ -1,7 +1,7 @@
 pipeline {
   agent none
-  Stages {
-    Stage('Build') {
+  stages {
+    stage('Build') {
       agent {
         docker {
           image 'python:2-alpine'
@@ -12,5 +12,7 @@ pipeline {
         stash(name: 'compiled-results',includes: 'sources/*.py*')
       }
     }
-  }}
+  }
+} 
+
   
